@@ -12,7 +12,7 @@ trait TransmissionAuto
     protected function goforward()
     {
         echo "Режим езды вперед" . PHP_EOL;
-
+        return 1;
     }
 }
 trait TransmissionManual
@@ -57,6 +57,7 @@ class Car
     public function drive()
     {
         $path = 0;
+
         while ($path < $this->distance) {
             sleep(1);
             $path += $this->speed;
@@ -66,7 +67,7 @@ class Car
                 echo "темпиратура двигателя увеличилась на 5 градусов" . PHP_EOL;
                 echo "темпиратура :" . $this->temperature . " градусов". PHP_EOL;
             }
-            while ($this->temperature > 90) {
+             while($this->temperature > 90) {
                 $this->cooling();
             }
         }
@@ -76,11 +77,11 @@ class Niva extends Car
 {
     use Engine ;
     use TransmissionManual;
-    function __construct($dist, $speed)
+    function __construct($dist, $speed, $dest)
     {
         $this->distance = $dist;
         $this->speed = $speed;
-
+        $this->destination = $dest;
     }
 
 
@@ -109,9 +110,9 @@ class Niva extends Car
         }
     }
 }
-$Nive = new Niva(400, 30);
+$Nive = new Niva(400, 30, 1);
 $Nive->getNiva();
-
+// dest = 1 = вперед, 0 - назад
 
 
 
