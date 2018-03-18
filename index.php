@@ -12,7 +12,6 @@ trait TransmissionAuto
     protected function goforward()
     {
         echo "Режим езды вперед" . PHP_EOL;
-        return 1;
     }
 }
 trait TransmissionManual
