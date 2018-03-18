@@ -12,7 +12,7 @@ trait TransmissionAuto
     protected function goforward()
     {
         echo "Режим езды вперед" . PHP_EOL;
-        return 1;
+
     }
 }
 trait TransmissionManual
@@ -76,11 +76,11 @@ class Niva extends Car
 {
     use Engine ;
     use TransmissionManual;
-    function __construct($dist, $speed, $dest)
+    function __construct($dist, $speed)
     {
         $this->distance = $dist;
         $this->speed = $speed;
-        $this->destination = $dest;
+
     }
 
 
@@ -109,9 +109,9 @@ class Niva extends Car
         }
     }
 }
-$Nive = new Niva(400, 30, 1);
+$Nive = new Niva(400, 30);
 $Nive->getNiva();
-// dest = 1 = вперед, 0 - назад
+
 
 
 
